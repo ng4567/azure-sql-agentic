@@ -10,10 +10,18 @@ For now, use of Windows 11 is required.
 - Install [uv](https://docs.astral.sh/uv/getting-started/installation/) python pacakge manager
 - [Azure](https://azure.microsoft.com/en-us/pricing/purchase-options/azure-account) Subscription with sufficient credit and permissions to create and deploy LLMs on [Microsoft Foundry](ai.azure.com)
 - [Azure SQL](https://azure.microsoft.com/en-us/products/azure-sql/database) instance populated with data
+- Working [Git Installation](https://git-scm.com/install/)
 
 Before deploying cloud dependencies run `az login` to select an azure tenant and authenticate to the Azure CLI.
 
 # Setup
+
+## Clone repo
+
+```powershell
+git clone https://github.com/ng4567/azure-sql-agentic.git
+cd .\azure-sql-agentic\
+```
 
 ## Deploy Cloud Resources
 
@@ -23,12 +31,14 @@ powershell .\deploy.ps1
 
 The script will provision an instance of Microsoft Foundry and create a Foundry project and deploy a [GPT-5-mini](https://ai.azure.com/catalog/models/gpt-5-mini) model inside of it. It will save the necessary API credentials inside a `.env` file to easily use them when writing your Python code.
 
-## Install Python Dependencies
+## Install Python Dependencies & Activate Virtual Environment
 ```powershell
 uv venv .venv/
 uv sync
 .venv\Scripts\activate.ps1
 ```
+
+The above commands create a virtual python environment with the uv package manager and then install the dependencies into it before finally activating it. 
 
 ## SQL DB Credentials
 
