@@ -1,0 +1,17 @@
+[project]
+name = "azure-sql-agentic"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "agent-framework>=1.0.0b260107",
+    "asyncio>=4.0.0",
+    "azure-batch>=15.0.0b1",
+    "azure-identity>=1.26.0b1",
+    "pyodbc>=5.3.0",
+    "python-dotenv>=1.2.1",
+]
+
+[tool.uv]
+prerelease = "allow"
